@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Song List</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Song List</h1>
+        </header>
+        <div id="serial"></div>
+        <div id="songs"></div>
+        <div id="genres"></div>
+        <div id="input">
+            <form>
+                <p>Filter the genre:</p>
+                <select>
+                    <option value="none">Please Select a Genre</option>
+                    <option value="genre">type</option>
+                    <option value="genre">type</option>
+                    <option value="genre">type</option>
+                    <option value="genre">type</option>
+                </select>
+                <input type="button" id="filter" value="Filter">
+            </form>
+        </div>
+
+        <script src="jquery-3.6.0.js"></script>
+        <script>
+            $.getJSON("https://wmcleish.github.io/CS20_A9/song_list.json", function(data){
+                $("#serial").html(JSON.stringify(data));
+                for (let i = 0; i < data.setlist.length; i++){
+                    for (let j in data.setlist[i]){
+                        $("#songs").append(data.setlist[i][j] + "</br>");
+                    }
+                    $("#songs").append("</br>");
+                    $("#genres").append(data.setlist[i]["title"] + "</br>");
+                }
+                
+            });
+
+        </script>
+    </body>
+</html>
