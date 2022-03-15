@@ -21,7 +21,7 @@
                     <option value="R and B">R and B</option>
                     <option value="Pop">Pop</option>
                     <option value="House">House</option>
-                    <option value="Hip Hop, House">Hip Hop, House</option>
+                    <option value="Hip Hop">Hip Hop</option>
                 </select>
                 <input type="button" id="filter" value="Filter">
             </form>
@@ -40,15 +40,16 @@
                 }
                 $("#filter").click(function(){
                     $("#genres").html("");
-                    // $("#genres").append($("#pickgenre").val());
                     if ($("#pickgenre").val() == "none"){
                         for (let i = 0; i < data.setlist.length; i++){
                             $("#genres").append(data.setlist[i]["title"] + "</br>");
                         }
                     } else {
                         for (let i = 0; i < data.setlist.length; i++){
-                            if (data.setlist[i]["genres"] == $("#pickgenre").val()){
-                                $("#genres").append(data.setlist[i]["title"] + "</br>");
+                            for (let j = 0; j < data.setlist[i]["genres"][j].length; j++){
+                                if (data.setlist[i]["genres"][j] == $("#pickgenre").val()){
+                                    $("#genres").append(data.setlist[i]["title"] + "</br>");
+                                }
                             }
                         }
                     }
