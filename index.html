@@ -27,14 +27,20 @@
             </form>
         </div>
 
+        <!--  "title" : "Sing",
+            "artists" : "Ed Sheeran",
+            "genres" : ["R and B"],
+            "year" : 2014 -->
+
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script>
             $.getJSON("https://wmcleish.github.io/CS20_A9/song_list.json", function(data){
                 $("#serial").html(JSON.stringify(data));
                 for (let i = 0; i < data.setlist.length; i++){
-                    for (let j in data.setlist[i]){
-                        $("#songs").append(data.setlist[i][j] + "</br>");
-                    }
+                    $("#songs").append("Title: " + data.setlist[i]["title"] + "</br>");
+                    $("#songs").append("Artists: " + data.setlist[i]["artists"] + "</br>");
+                    $("#songs").append("Genres: " + data.setlist[i]["genres"] + "</br>");
+                    $("#songs").append("Release year: " + data.setlist[i]["year"] + "</br>");
                     $("#songs").append("</br>");
                     $("#genres").append(data.setlist[i]["title"] + "</br>");
                 }
@@ -46,11 +52,12 @@
                         }
                     } else {
                         for (let i = 0; i < data.setlist.length; i++){
-                            for (let j = 0; j < data.setlist[i]["genres"][j].length; j++){
+                            for (let j = 0; j < data.setlist[i]["genres"].length; j++){
                                 if (data.setlist[i]["genres"][j] == $("#pickgenre").val()){
                                     $("#genres").append(data.setlist[i]["title"] + "</br>");
                                 }
                             }
+                            
                         }
                     }
                 });

@@ -3,3 +3,11 @@ body {
     text-align: center;
 }
 
+h1 {
+    background-color: rgb(71, 141, 233);
+    font-size: 64px;
+}
+
+h3 {
+    background-color: rgb(71, 141, 233);
+}
