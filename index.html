@@ -8,9 +8,11 @@
         <header>
             <h1>Song List</h1>
         </header>
+        <h3>Serial Display</h3>
         <div id="serial"></div>
+        <h3>User Friendly Display</h3>
         <div id="songs"></div>
-        <div id="genres"></div>
+        <h3>Genre Filtering</h3>
         <div id="input">
             <form>
                 <p>Filter the genre:</p>
@@ -25,7 +27,7 @@
             </form>
         </div>
 
-        <script src="jquery-3.6.0.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
         <script>
             $.getJSON("https://wmcleish.github.io/CS20_A9/song_list.json", function(data){
                 $("#serial").html(JSON.stringify(data));
@@ -38,13 +40,14 @@
                 }
                 $("#filter").click(function(){
                     $("#genres").html("");
-                    if ($("#pickgenre").val() == none){
+                    // $("#genres").append($("#pickgenre").val());
+                    if ($("#pickgenre").val() == "none"){
                         for (let i = 0; i < data.setlist.length; i++){
                             $("#genres").append(data.setlist[i]["title"] + "</br>");
                         }
                     } else {
                         for (let i = 0; i < data.setlist.length; i++){
-                            if (data.setlist[i]["genre"] == $("#pickgenre").val()){
+                            if (data.setlist[i]["genres"] == $("#pickgenre").val()){
                                 $("#genres").append(data.setlist[i]["title"] + "</br>");
                             }
                         }
@@ -52,5 +55,6 @@
                 });
             });
         </script>
+        <div id="genres"></div>
     </body>
 </html>
