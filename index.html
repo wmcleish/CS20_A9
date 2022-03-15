@@ -14,12 +14,12 @@
         <div id="input">
             <form>
                 <p>Filter the genre:</p>
-                <select>
+                <select id="pickgenre">
                     <option value="none">Please Select a Genre</option>
-                    <option value="genre">type</option>
-                    <option value="genre">type</option>
-                    <option value="genre">type</option>
-                    <option value="genre">type</option>
+                    <option value="R and B">R and B</option>
+                    <option value="Pop">Pop</option>
+                    <option value="House">House</option>
+                    <option value="Hip Hop, House">Hip Hop, House</option>
                 </select>
                 <input type="button" id="filter" value="Filter">
             </form>
@@ -36,9 +36,21 @@
                     $("#songs").append("</br>");
                     $("#genres").append(data.setlist[i]["title"] + "</br>");
                 }
-                
+                $("#filter").click(function(){
+                    $("#genres").html("");
+                    if ($("#pickgenre").val() == none){
+                        for (let i = 0; i < data.setlist.length; i++){
+                            $("#genres").append(data.setlist[i]["title"] + "</br>");
+                        }
+                    } else {
+                        for (let i = 0; i < data.setlist.length; i++){
+                            if (data.setlist[i]["genre"] == $("#pickgenre").val()){
+                                $("#genres").append(data.setlist[i]["title"] + "</br>");
+                            }
+                        }
+                    }
+                });
             });
-
         </script>
     </body>
 </html>
