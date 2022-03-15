@@ -1,0 +1,75 @@
+{
+    "bandName" : "Party Crashers",
+    "setlist" : [
+        {
+            "title" : "Sing",
+            "artists" : "Ed Sheeran",
+            "genres" : "R and B",
+            "year" : 2014
+        },
+
+        {
+            "title" : "Summer",
+            "artists" : "Calvin Harris",
+            "genres" : "Pop",
+            "year" : 2014
+        },
+
+        {
+            "title" : "Burn",
+            "artists" : "Ellie Goulding",
+            "genres" : "Electro Pop",
+            "year" : 2013
+        },
+
+        {
+            "title" : "Sky Full of Stars",
+            "artists" : "Coldplay",
+            "genres" : "Progressive House",
+            "year" : 2014
+        },
+
+        {
+            "title" : "Call Me Maybe",
+            "artists" : "Carly Rae Jepsen",
+            "genres" : "Pop",
+            "year" : 2011
+        },
+
+        {
+            "title" : "We Found Love",
+            "artists" : "Rihanna",
+            "genres" : "Electro House",
+            "year" : 2011
+        },
+
+        {
+            "title" : "Good Feeling",
+            "artists" : "Flo Rida, Avicii",
+            "genres" : "Hip House, Eurodance",
+            "year" : 2011
+        },
+
+        {
+            "title" : "Starships",
+            "artists" : "Nicki Minaj",
+            "genres" : "Dance Pop",
+            "year" : 2012
+        },
+
+        {
+            "title" : "Gangnam Style",
+            "artists" : "Psy",
+            "genres" : "K-Pop",
+            "year" : 2012
+        },
+
+        {
+            "title" : "You Make Me Feel",
+            "artists" : "Cobra Starship",
+            "genres" : "Dance Pop",
+            "year" : 2011
+        }
+
+    ]
+}
